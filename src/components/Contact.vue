@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <v-container id="contact">
         <v-form
           ref="form"
           v-model="valid"
@@ -7,100 +7,139 @@
         >
           <v-text-field
             v-model="name"
-            :counter="10"
+            :counter="20"
             :rules="nameRules"
-            label="Name"
+            label="Namn"
+            name="namn"
             required
           ></v-text-field>
       
           <v-text-field
             v-model="email"
             :rules="emailRules"
-            label="E-mail"
+            label="E-post"
+            name="email"
             required
+          ></v-text-field>
+
+          <v-text-field
+            v-model="phone"
+            label="Telefonnummer"
+            name="phone"
           ></v-text-field>
       
           <v-select
             v-model="select"
             :items="items"
-            :rules="[v => !!v || 'Item is required']"
-            label="Item"
+            :rules="[v => !!v || 'Ni måste välja ett ämne']"
+            label="Välj ett ärende"
+            name="select"
             required
           ></v-select>
       
-          <v-checkbox
+          <!-- <v-checkbox
             v-model="checkbox"
-            :rules="[v => !!v || 'You must agree to continue!']"
-            label="Do you agree?"
+            :rules="[v => !!v || 'Du måste godkänna villkoren för att kunna fortsätta!']"
+            label="Godkänn villkoren?"
             required
-          ></v-checkbox>
+          ></v-checkbox> -->
       
           <v-btn
             :disabled="!valid"
-            color="success"
+            color="#D7B46A"
             class="mr-4"
-            @click="validate"
+            type="submit"
+            @click.prevent="submit"
           >
-            Validate
+            Skicka
           </v-btn>
       
           <v-btn
-            color="error"
+            variant="outlined"
+            color="#D7B46A"
             class="mr-4"
             @click="reset"
           >
-            Reset Form
+            Rensa formuläret
           </v-btn>
-      
+      <!-- 
           <v-btn
             color="warning"
             @click="resetValidation"
           >
             Reset Validation
-          </v-btn>
+          </v-btn> -->
         </v-form>
+        <v-snackbar
+      v-model="snackbar"
+    >
+      {{ text }}
+
+      <template v-slot:actions>
+        <v-btn
+          color="pink"
+          variant="text"
+          @click="snackbar = false"
+        >
+          Stäng
+        </v-btn>
+      </template>
+    </v-snackbar>
     </v-container>
 </template>
 
 
 <script>
-    export default {
-      data: () => ({
-        valid: true,
-        name: '',
-        nameRules: [
-          v => !!v || 'Name is required',
-          v => (v && v.length <= 10) || 'Name must be less than 10 characters',
-        ],
-        email: '',
-        emailRules: [
-          v => !!v || 'E-mail is required',
-          v => /.+@.+\..+/.test(v) || 'Ange en giltig e-postadress',
-        ],
-        select: null,
-        items: [
-          'Item 1',
-          'Item 2',
-          'Item 3',
-          'Item 4',
-        ],
-        checkbox: false,
-      }),
-  
-      methods: {
-        validate () {
-          this.$refs.form.validate()
-        },
-        reset () {
-          this.$refs.form.reset()
-        },
-        resetValidation () {
-          this.$refs.form.resetValidation()
-        },
-      },
-    }
-  </script>
+import axios from 'axios'
+export default {
+  data: () => ({
+    valid: true,
+    name: '',
+    nameRules: [
+      v => !!v || 'Name is required',
+      v => (v && v.length <= 20) || 'Name must be less than 20 characters',
+    ],
+    email: '',
+    emailRules: [
+      v => !!v || 'E-mail is required',
+      v => /.+@.+\..+/.test(v) || 'Ange en giltig e-postadress',
+    ],
+    phone: '',
+    select: null,
+    items: [
+      'Boka ett möte',
+      'Kostnadsförslag',
+      'Rådgivning',
+      'Jag vill bli kontaktad',
+    ],
+    checkbox: false,
+    snackbar: false,
+    text: `Meddelandet är skickat!`,
+  }),
 
-<style>
-
-</style>
+  methods: {
+    submit () {
+      this.$refs.form.validate()
+      axios.defaults.headers.post['Content-Type'] = 'application/json';
+      axios.post('https://formsubmit.co/ajax/info@kok-bygg.se', {
+          name: this.name,
+          email: this.email,
+          phone: this.phone,
+          select: this.select
+      })
+      .then((response) => {
+          console.log(response)
+          if(response.status === 200){
+            this.snackbar = true
+            this.$refs.form.reset()
+            this.checkbox = false
+          }
+      })
+      .catch(error => console.log(error));
+    },
+    resetValidation () {
+      this.$refs.form.resetValidation()
+    },
+  },
+}
+</script>

@@ -5,7 +5,7 @@
       app
       color="#D7B46A"
       bottom
-        temporary
+      temporary
     >
     <v-list-item>
         <v-list-item-content>
@@ -21,21 +21,22 @@
       <v-divider></v-divider>
 
       <v-list density="compact">
-      <v-list-subheader>LÄNKAR</v-list-subheader>
+        <v-list-subheader>LÄNKAR</v-list-subheader>
 
-      <v-list-item
-        v-for="(item, i) in items"
-        :key="i"
-        :value="item"
-        active-color="primary"
-      >
-        <template v-slot:prepend>
-          <v-icon :icon="item.icon"></v-icon>
-        </template>
+        <v-list-item
+          v-for="item in items"
+          :key="item.id"
+          :value="item"
+          active-color="#3E2723"
+        >
+          <template v-slot:prepend>
+            <v-icon :icon="item.icon"></v-icon>
+          </template>
 
-        <v-list-item-title v-text="item.text"></v-list-item-title>
-      </v-list-item>
-    </v-list>
+          <!-- <v-list-item-title><a :href="item.link">{{item.text}}</a></v-list-item-title> -->
+          <v-list-item-title @click="scrollToLink(item.link), drawer = !drawer">{{item.text}}</v-list-item-title>
+        </v-list-item>
+      </v-list>
 
       <!-- <v-list
         dense
@@ -64,8 +65,8 @@
 
       <v-spacer></v-spacer>
 
-        <v-btn icon>
-          <v-icon>mdi-magnify</v-icon>
+        <v-btn @click="scrollToLink('concept-smart')" icon>
+          <v-icon>mdi-head-lightbulb</v-icon>
         </v-btn>
 
         <!-- <v-btn icon>
@@ -78,10 +79,13 @@
     </v-app-bar>
 
     <v-main>
+      <router-view />
       <Jumbotron />
       <Infobox />
       <Plan />
       <DrawingHelp />
+      <Storage />
+      <ConceptSmart />
       <Suppliers />
       <Gallery />
       <Contact />
@@ -97,22 +101,28 @@ import Jumbotron from './components/Jumbotron.vue'
 import Infobox from './components/Infobox.vue'
 import Plan from './components/Plan.vue'
 import DrawingHelp from './components/DrawingHelp.vue'
+import Storage from './components/Storage.vue'
 import Suppliers from './components/Suppliers.vue'
 import Gallery from './components/Gallery.vue'
 import Contact from './components/Contact.vue'
 import Map from './components/Map.vue'
 import TopFooter from './components/TopFooter.vue'
 import BottomFooter from './components/BottomFooter.vue'
+import ConceptSmart from './components/ConceptSmart.vue'
 export default {
   name: 'App',
-  components: { Jumbotron, Infobox, Plan, DrawingHelp, Suppliers, Gallery, Contact, Map, TopFooter, BottomFooter },
+  components: { Jumbotron, Infobox, Plan, DrawingHelp, Storage, Suppliers, Gallery, Contact, Map, TopFooter, BottomFooter, ConceptSmart },
   data: () => ({
     drawer: null,
     items: [
-        { text: 'Hem', icon: 'mdi-home', link: '#home' },
-        { text: 'Rithjälp', icon: 'mdi-draw', link: '#draw' },
-        { text: 'Audience', icon: 'mdi-account' },
-        { text: 'Conversions', icon: 'mdi-flag' },
+        { id: 1, text: 'Hem', icon: 'mdi-home', link: 'home' },
+        { id: 2, text: 'Koncept "Smart"', icon: 'mdi-head-lightbulb', link: 'concept-smart' },
+        { id: 3, text: 'Rithjälp', icon: 'mdi-draw', link: 'drawing-help' },
+        { id: 4, text: 'Förvaring', icon: 'mdi-dresser', link: 'storage' },
+        { id: 5, text: 'Galleri', icon: 'mdi-animation', link: 'gallery' },
+        { id: 6, text: 'Kontakt', icon: 'mdi-email', link: 'contact' },
+        { id: 7, text: 'Hitta till oss', icon: 'mdi-map-marker', link: 'map' },
+        { id: 8, text: 'Leverantörer', icon: 'mdi-hammer-screwdriver', link: 'suppliers' },
       ],
     // items: [
     //       { title: 'Hem', icon: 'mdi-home', link: '#home' },
@@ -129,6 +139,12 @@ export default {
     //       { title: 'Ladda ner', icon: 'mdi-file-download', link: '#download' },
     //     ],
   }),
+  methods: {
+    scrollToLink(link) {
+      
+      document.getElementById(link).scrollIntoView({ behavior: "smooth", block: 'nearest' })
+    }
+  }
 }
 </script>
 

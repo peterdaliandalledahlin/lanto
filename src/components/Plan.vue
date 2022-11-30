@@ -1,9 +1,9 @@
 <template>
     <v-parallax
-      src="panovision-bg.png"
+      src="panovision-bg.jpg"
     >
       <div class="d-flex flex-column fill-height justify-center align-center text-white">
-        <v-btn color="#D7B46A">Planera ditt köksköp - boka tid</v-btn>
+        <v-btn @click="scrollToLink('contact')" color="#D7B46A">Planera ditt köksköp - boka tid</v-btn>
       </div>
     </v-parallax>
   </template>
@@ -17,10 +17,17 @@
     components: {
       
     },
+    methods: {
+      scrollToLink(link) {
+        document.getElementById(link).scrollIntoView({ behavior: "smooth", block: 'nearest' })
+      }
+    }
   })
   </script>
   <style scoped>
-
+.d-flex.flex-column.fill-height.justify-center.align-center.text-white {
+  min-height: 200px !important;
+}
   
   </style>
   

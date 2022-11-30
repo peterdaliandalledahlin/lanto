@@ -1,5 +1,5 @@
 <template>
-    <v-container fluid>
+    <v-container fluid id="drawing-help">
         <v-card
             plain
             class="pa-5"
@@ -38,7 +38,7 @@ export default {
 }
 .bread {
     font-family: MontserratRegular;
-    line-height: 1.5;
+    line-height: 2;
 }
 
 </style>

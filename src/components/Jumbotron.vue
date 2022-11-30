@@ -1,9 +1,10 @@
 <template>
   <v-parallax
-    src="lanto-header.png"
+    src="lanto-header.jpg"
+    id="home"
   >
     <div class="d-flex flex-column fill-height justify-center align-center text-white">
-      <v-img width="150" height="150" src="logo.png" />
+      <v-img class="my-3" width="150" height="150" src="logo.png" />
     </div>
   </v-parallax>
 </template>
@@ -20,6 +21,8 @@ export default defineComponent({
 })
 </script>
 <style scoped>
-
+/* #home {
+  scroll-padding-top: -30px;
+} */
 
 </style>
