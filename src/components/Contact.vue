@@ -137,9 +137,19 @@ export default {
       })
       .catch(error => console.log(error));
     },
+    reset () {
+        this.$refs.form.reset()
+      },
     resetValidation () {
       this.$refs.form.resetValidation()
     },
   },
 }
 </script>
+
+<style scoped>
+button:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+</style>
