@@ -5,7 +5,7 @@
             class="pa-5"
         >
             <h1 class="title mb-2">Lanto Kök & Bygg planerar, säljer & monterar kök.</h1>
-            <p class="bread"><span class="font-weight-bold">Vi planerar, säljer och monterar svenska kvalitetskök ur ett oslagbart sortiment med oändliga valmöjligheter.</span><br /> I vår utställning kan du inspireras av snygga lantkök och stilrena moderna kök. Det senaste inom bänkskivor och ett urval av bra funktioner och lösningar. Vi följer dig hela vägen från den första ritningen till ett färdigt monterat kök. Med stöd av lång erfarenhet och gedigna kunskaper om kök och finsnickerier, tar vi hand om hela din renovering på ett effektivt och smart sätt.</p>
+            <p class="bread"><span class="font-weight-bold">Vi planerar, säljer och monterar svenska kvalitetskök ur ett oslagbart sortiment med oändliga valmöjligheter.</span><br /> I vår utställning inspireras du av snygga lantkök och stilrena moderna kök, tillsammans med ett urval av bra funktioner och lösningar, samt det senaste inom bänkskivor och diskhoar. Med stöd av lång erfarenhet och gedigna kunskaper om kök och finsnickerier, tar vi hand om hela din renovering på ett effektivt och smart sätt. Vi följer dig hela vägen från den första ritningen till ett färdigt monterat kök.</p>
         </v-card>
     </v-container>
 </template>

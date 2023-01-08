@@ -5,7 +5,7 @@
             class="pa-5"
         >
             <h1 class="title mb-2">Förvaring</h1>
-            <p class="bread">Skjutdörrsförvaring som tillverkas och måttanpassas utifrån kundens önskemål och rummets förutsättningar. Vi hjälper dig hela vägen från planering, via val av kvalitets-produkter till montering av dessa. Garderober som tillverkas och måttanpassas utifrån dina önskemål och rummets förutsättningar.</p>
+            <p class="bread">Skjutdörrsförvaring tillverkas och måttanpassas utifrån kundens önskemål och rummets förutsättningar. Vi hjälper dig hela vägen från planering, till val av garderobsinredning, dörrar och montering.</p>
         </v-card>
     </v-container>
 </template>

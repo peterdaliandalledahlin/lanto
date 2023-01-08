@@ -21,14 +21,14 @@
             variant="plain"
             ></v-btn>
             <v-btn
-            href="https://google.se"
+            href="https://www.instagram.com/lantokok_bygg/"
             target="_blank"
             class="mx-4"
             icon="mdi-instagram"
             variant="plain"
             ></v-btn>
             <v-btn
-            href="https://google.se"
+            href="https://www.facebook.com/lantokokbygg"
             target="_blank"
             class="mx-4"
             icon="mdi-facebook"
@@ -39,7 +39,14 @@
       <v-divider></v-divider>
 
       <v-card-text>
-        © Copyright - {{ new Date().getFullYear() }} — <strong>Lanto Kök & Bygg</strong>
+        © Copyright - {{ new Date().getFullYear() }} — <strong>Lanto Kök & Bygg</strong> made by peterdahlindesign@gmail.com
+        <!--
+        <v-img
+          :width="width"
+          src="logotype_peterdahlindesign.png"
+          cover
+        ></v-img>
+        -->
       </v-card-text>
     </v-card>
   </v-footer>
@@ -50,9 +57,10 @@
   
   export default defineComponent({
     name: 'bottom-footer',
-    components: {
-      
-    },
+    data: () => ({
+      //width: 50,
+      //aspectRatio: 16 / 9,
+    }),
     methods: {
       scrollToLink(link) {
         document.getElementById(link).scrollIntoView({ behavior: "smooth", block: 'nearest' })

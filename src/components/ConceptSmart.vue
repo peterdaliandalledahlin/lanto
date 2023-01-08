@@ -6,13 +6,13 @@
         >
             <h1 class="title mb-2">Koncept "Smart".</h1>
             <h3 class="title mb-2">Montering</h3>
-            <p class="bread">Med vårt koncept ”Smart” slipper du lägga tid på att jaga hantverkare, riva ditt gamla kök, montera det nya eller oroa dig för leveranser och misstag. Du väljer själv vad du vill ha hjälp med, sedan tar vi och våra samarbetspartners hand om resten. Vår byggledare ansvarar för all samordning mellan rörmokare, elektriker, målare, plattsättare och övriga hantverkare som ni väljer att anlita under processen.</p>
+            <p class="bread">Med vårt koncept ”Smart” slipper du lägga tid på att jaga hantverkare, riva ditt gamla kök, montera det nya eller oroa dig för leveranser och misstag. Du väljer själv vad du vill ha hjälp med, vi och våra samarbetspartners tar hand om resten. Vår byggledare ansvarar för all samordning mellan rörmokare, elektriker, målare, plattsättare och övriga hantverkare som ni väljer att anlita under processen.</p>
             <h3 class="title mb-2">Planering</h3>
-            <p class="bread mb-2">Under vårt inbokade planeringsmöte går vi igenom detaljer som är viktiga för just er och ert unika kök. Vilka funktioner och hjälpmedel förväntar ni er i ert nya kök? Vi pratar om planeringsalternativ, materialval samt för- och nack-delar med olika val. Därefter ritar vi en 3-dimentionell dataritning som sedan ändras och justeras till dess att vi gemensamt kommit fram till hur just ert nya kök skall se ut.</p>
+            <p class="bread mb-2">Under vårt inbokade planeringsmöte går vi igenom detaljer som är viktiga för just er och ert unika kök. Vilka funktioner och hjälpmedel förväntar ni er i ert nya kök? Vi pratar om planeringsalternativ, materialval, för- och nack-delar med olika val. Därefter ritar vi för den som önskar en 3-dimentionell dataritning som sedan ändras och justeras tills vi gemensamt kommit fram till hur just ert nya kök skall se ut.</p>
             <h3 class="title mb-2">Beställning</h3>
-            <p class="bread mb-2">Före ev. beställning kommer vi hem till er och kontrollmäter alla mått och vinklar i ert kök. Därmed tar vi också på oss fullt ansvar för att ert nya kök tillverkas och anpassas för ert köks specifika mått. Vi gör också gemensamt upp en tidplan för leveranser och olika arbetsmoment. I samband med orderbekräftelsen bifogar vi även en förteckning med kontaktlista till samtliga företag som kommer att anlitas vid er köksrenovering.</p>
+            <p class="bread mb-2">Före ev. beställning kommer vi hem till er och kontrollmäter alla mått och vinklar i ert kök. Därmed tar vi också på oss fullt ansvar för att köket tillverkas och anpassas för ert köks specifika mått. Vi gör också gemensamt upp en tidplan för leveranser och olika arbetsmoment. I samband med orderbekräftelsen bifogar vi även en förteckning med kontaktlista till samtliga företag som kommer att anlitas vid er köksrenovering.</p>
             <h3 class="title mb-2">Efterkontroll</h3>
-            <p class="bread mb-2">I vårt koncept ”Smart” ingår även ett hembesök av säljaren och byggledaren, där vi tillsammans går igenom detaljer, skötselråd, efterjusteringar och funktioner för ert nya kök. </p>
+            <p class="bread mb-2">I vårt koncept ”Smart” ingår även ett hembesök, där vi tillsammans går igenom detaljer, skötselråd, efterjusteringar och funktioner för det nya köket.</p>
         </v-card>
     </v-container>
 </template>

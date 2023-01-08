@@ -51,6 +51,11 @@
             type="submit"
             @click.prevent="submit"
           >
+          <v-progress-circular
+            v-if="spinner"
+            indeterminate
+            color="#D7B46A"
+          ></v-progress-circular>
             Skicka
           </v-btn>
       
@@ -93,6 +98,7 @@
 import axios from 'axios'
 export default {
   data: () => ({
+    spinner: false,
     valid: true,
     name: '',
     nameRules: [
@@ -119,6 +125,7 @@ export default {
 
   methods: {
     submit () {
+      this.spinner = true
       this.$refs.form.validate()
       axios.defaults.headers.post['Content-Type'] = 'application/json';
       axios.post('https://formsubmit.co/ajax/info@kok-bygg.se', {
@@ -133,6 +140,7 @@ export default {
             this.snackbar = true
             this.$refs.form.reset()
             this.checkbox = false
+            this.spinner = false
           }
       })
       .catch(error => console.log(error));

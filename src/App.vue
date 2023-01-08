@@ -79,7 +79,8 @@
     </v-app-bar>
 
     <v-main>
-      <router-view />
+      <!-- <router-view /> -->
+      
       <Jumbotron />
       <Infobox />
       <Plan />
@@ -92,11 +93,13 @@
       <Map />
       <TopFooter />
       <BottomFooter />
+      
     </v-main>
   </v-app>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue'
 import Jumbotron from './components/Jumbotron.vue'
 import Infobox from './components/Infobox.vue'
 import Plan from './components/Plan.vue'
@@ -109,43 +112,50 @@ import Map from './components/Map.vue'
 import TopFooter from './components/TopFooter.vue'
 import BottomFooter from './components/BottomFooter.vue'
 import ConceptSmart from './components/ConceptSmart.vue'
-export default {
-  name: 'App',
-  components: { Jumbotron, Infobox, Plan, DrawingHelp, Storage, Suppliers, Gallery, Contact, Map, TopFooter, BottomFooter, ConceptSmart },
-  data: () => ({
-    drawer: null,
-    items: [
-        { id: 1, text: 'Hem', icon: 'mdi-home', link: 'home' },
-        { id: 2, text: 'Koncept "Smart"', icon: 'mdi-head-lightbulb', link: 'concept-smart' },
-        { id: 3, text: 'Rithjälp', icon: 'mdi-draw', link: 'drawing-help' },
-        { id: 4, text: 'Förvaring', icon: 'mdi-dresser', link: 'storage' },
-        { id: 5, text: 'Galleri', icon: 'mdi-animation', link: 'gallery' },
-        { id: 6, text: 'Kontakt', icon: 'mdi-email', link: 'contact' },
-        { id: 7, text: 'Hitta till oss', icon: 'mdi-map-marker', link: 'map' },
-        { id: 8, text: 'Leverantörer', icon: 'mdi-hammer-screwdriver', link: 'suppliers' },
-      ],
-    // items: [
-    //       { title: 'Hem', icon: 'mdi-home', link: '#home' },
-    //       { title: 'Boka', icon: 'mdi-calendar-range', link: '#book' },
-    //       { title: 'Prislista', icon: 'mdi-cash-100', link: '#pricelist' },
-    //       { title: 'Aktuellt', icon: 'mdi-bell-ring', link: '#events'  },
-    //       { title: 'Aktiviteter', icon: 'mdi-human-female-dance', link: '#activities' },
-    //       { title: 'Sponsring', icon: 'mdi-cash-100', link: '#sponsorship' },
-    //       { title: 'Sponsorer', icon: 'mdi-cash-100', link: '#sponsors' },
-    //       { title: 'Hitta till oss', icon: 'mdi-map-marker', link: '#find-us' },
-    //       { title: 'Kontakta oss', icon: 'mdi-account-box', link: '#contact' },
-    //       { title: 'Galleri', icon: 'mdi-view-gallery', link: '#gallery' },
-    //       { title: 'Tidslinje', icon: 'mdi-timeline', link: '#timeline' },
-    //       { title: 'Ladda ner', icon: 'mdi-file-download', link: '#download' },
-    //     ],
-  }),
-  methods: {
-    scrollToLink(link) {
-      
-      document.getElementById(link).scrollIntoView({ behavior: "smooth", block: 'nearest' })
-    }
-  }
+
+const drawer = ref(null)
+
+const items = ref([
+  { id: 1, text: 'Hem', icon: 'mdi-home', link: 'home' },
+  { id: 2, text: 'Koncept "Smart"', icon: 'mdi-head-lightbulb', link: 'concept-smart' },
+  { id: 3, text: 'Rithjälp', icon: 'mdi-draw', link: 'drawing-help' },
+  { id: 4, text: 'Förvaring', icon: 'mdi-dresser', link: 'storage' },
+  { id: 5, text: 'Galleri', icon: 'mdi-animation', link: 'gallery' },
+  { id: 6, text: 'Kontakt', icon: 'mdi-email', link: 'contact' },
+  { id: 7, text: 'Hitta till oss', icon: 'mdi-map-marker', link: 'map' },
+  { id: 8, text: 'Leverantörer', icon: 'mdi-hammer-screwdriver', link: 'suppliers' },
+])
+  
+const scrollToLink = (link) => {
+  document.getElementById(link).scrollIntoView({ behavior: "smooth", block: 'nearest' })
 }
+
+// onMounted(() => {
+// const sectionOne = document.getElementById('suppliers')
+// const sections = document.querySelectorAll('.v-container')
+// const options = {
+//   root: null,
+//   threshold: 0,
+//   rootMargin: ''
+// }
+
+// const observer = new IntersectionObserver((entries, observer) => {
+//   entries.forEach((entry) => {
+//   if(!entry.isInterSecting) {
+//    return
+//   }
+//     console.log(entry.target)
+//    entry.target.classList.toggle('inverse')
+//    observer.unobserve(entry.target)
+//   })
+// }, options)
+
+// sections.forEach((section) => {
+//   observer.observe(section)
+// })
+
+// })
+
 </script>
 
 <style scoped>

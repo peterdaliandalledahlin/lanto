@@ -5,8 +5,15 @@
             class="pa-5"
         >
             <h1 class="title mb-2">Vi ritar ert kök.</h1>
-            <p class="bread">Kontakta oss så hjälper vi er att rita ert nya kök. Vi hjälper er gärna att rita och planera ert nya kök. Förbered er med en "enkel måttskiss", samt fundera över ert behov och önskemål avseende Vitvaror, Arbetsytor, Köksdesign m.m, så skapar vi sedan gemensamt ert nya Drömkök. Tid bokas med Torbjörn Lanto, Kök & Bygg på tel: 0171-340 00<br />
-            Boka ett möte i vår utställning på Torggatan 28 C, där vi kan visa vårt sortiment. Vi går också igenom era önskemål och förutsättningar avseende ert nya kök. Därefter ritas det nya köket upp i vårt ritprogram. Sedan går vi tillsammans igenom förslaget och gör justeringar utifrån era önskemål.<br />
+            <p class="bread">
+              Vi hjälper er att rita och planera det nya köket. Förbered er med en enkel måttskiss,
+              fundera över ert behov och önskemål avseende vitvaror, arbetsytor, köksdesign m.m.
+              så skapar vi gemensamt ert nya drömkök.<br />
+              Tid bokas med Torbjörn Lanto, Kök &amp; Bygg på tel: 0171-340 00.<br />
+              Vid ett första möte i vår utställning på Torggatan 28 C, visar vi vårt sortiment och går
+              igenom era önskemål och förutsättningar avseende ert nya kök.
+              För den som önskar, ritas sedan det nya köket upp i vårt ritprogram. Vi går
+              tillsammans igenom förslaget och gör justeringar utifrån era önskemål.<br />
             <span class="font-weight-bold">För detta debiteras 5000:- som sedan återbetalas vid eventuellt köksköp.</span>
             </p>
         </v-card>

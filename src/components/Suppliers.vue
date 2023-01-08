@@ -4,11 +4,12 @@
       <v-row class="mt-3">
         <v-col v-for="kitchen in kitchens" :key="kitchen.id" cols="12" sm="6" lg="3">
           <v-card
-            class="mx-auto"
+            class="mx-auto fill-height"
             max-width="400"
             elevation="5"
           >
-      <v-img       
+      <v-img
+        v-if="!kitchen.img == ''"      
         height="200px"
         :src="kitchen.img"
       >
@@ -19,18 +20,18 @@
         Ev. information
       </v-card-subtitle> -->
   
-      <!-- <v-card-text class="text--primary">
-        <div class="text-h5">{{ supplier.type }}</div>
+      <v-card-text class="text--primary" v-if="!kitchen.title == ''">
+        <div class="text-h4 text-center mb-2">{{ kitchen.type }}</div>
   
-        <div>{{ supplier.title }}</div>
-      </v-card-text> -->
+        <div>{{ kitchen.title }}</div>
+      </v-card-text>
   
-      <v-card-actions>
+      <v-card-actions v-if="!kitchen.link == ''">
         <v-btn
           color="#000"
-          
           :href="kitchen.link"
           target="_blank"
+          v-show="!kitchen.link == ''"
         >
           Till hemsidan
         </v-btn>
@@ -282,31 +283,32 @@
     data() {
       return {
         kitchens: [
-          { id: 1, img: 'claesson.png', icon: 'mdi-domain', title: 'Claesson kök', type: 'KÖK', link: 'https://www.claessonkok.se/'},
-          { id: 2, img: 'smedstorp.png', icon: 'mdi-domain', title: 'Mora Armatur', type: 'KÖK', link: 'https://www.smedstorp.com/'},
+          { id: 1, img: 'claesson.png', icon: 'mdi-domain', title: '', type: '', link: 'https://www.claessonkok.se/'},
+          { id: 2, img: 'smedstorp.png', icon: 'mdi-domain', title: '', type: '', link: 'https://www.smedstorp.com/'},
+          { id: 3, img: '', icon: 'mdi-domain', title: 'Här kommer vi att presentera designade kök och inredningar som tagits fram tillsammans med lokala leverantörer och samarbetspartners, utifrån kundens unika krav och önskemål. Under januari månad kommer bilder på kök och skjutdörrar med namn ”Kesudden” att presenteras.', type: 'ENAköket', link: ''},
         ],
         countertops: [
-          { id: 1, img: 'granimar.webp', icon: 'mdi-domain', title: 'Granimar', type: 'BÄNKSKIVOR', link: 'https://www.granimar.se/'},
-          { id: 2, img: 'lg.png', icon: 'mdi-domain', title: 'Nibe', type: 'BÄNKSKIVOR', link: 'https://www.lgcoll.se/'},  
+          { id: 1, img: 'granimar.webp', icon: 'mdi-domain', title: '', type: 'BÄNKSKIVOR', link: 'https://www.granimar.se/'},
+          { id: 2, img: 'lg.png', icon: 'mdi-domain', title: '', type: 'BÄNKSKIVOR', link: 'https://www.lgcoll.se/'},  
         ],
         designs: [
-          { id: 1, img: 'beslagdesign.svg', icon: 'mdi-domain', title: 'Beslag & Design', type: 'BESLAG & TILLBEHÖR', link: 'https://www.beslagdesign.se/'},
-          { id: 2, img: 'linfalk.jpg', icon: 'mdi-domain', title: 'Linfalk', type: 'BESLAG & TILLBEHÖR', link: 'https://www.linfalk.se/'},  
+          { id: 1, img: 'beslagdesign.svg', icon: 'mdi-domain', title: '', type: 'BESLAG & TILLBEHÖR', link: 'https://www.beslagdesign.se/'},
+          { id: 2, img: 'linfalk.jpg', icon: 'mdi-domain', title: '', type: 'BESLAG & TILLBEHÖR', link: 'https://www.linfalk.se/'},  
         ],
         sinks: [
-          { id: 1, img: 'nordictech.png', icon: 'mdi-domain', title: 'Nordic Tech', type: 'DISKBÄNKAR', link: 'https://www.nordic-tech.se/'},  
+          { id: 1, img: 'nordictech.png', icon: 'mdi-domain', title: '', type: 'DISKBÄNKAR', link: 'https://www.nordic-tech.se/'},  
         ],
         appliances: [
-          { id: 1, img: 'miele.png', icon: 'mdi-domain', title: 'Miele', type: 'VITVAROR', link: 'https://www.miele.se/'},
-          { id: 2, img: 'witt.jpg', icon: 'mdi-domain', title: 'Witt Sverige', type: 'VITVAROR', link: 'https://www.wittsverige.se/'},
-          { id: 3, img: 'lsbolagen.png', icon: 'mdi-domain', title: 'LS Bolagen', type: 'VITVAROR', link: 'https://lindstromsondenab.teamtailor.com/'},  
+          { id: 1, img: 'miele.png', icon: 'mdi-domain', title: '', type: 'VITVAROR', link: 'https://www.miele.se/'},
+          { id: 2, img: 'witt.jpg', icon: 'mdi-domain', title: '', type: 'VITVAROR', link: 'https://www.wittsverige.se/'},
+          { id: 3, img: 'lsbolagen.png', icon: 'mdi-domain', title: '', type: 'VITVAROR', link: 'https://lindstromsondenab.teamtailor.com/'},  
         ],
         fancovers: [
-          { id: 1, img: 'fjaraskupan.png', icon: 'mdi-domain', title: 'Fjäråskupan', type: 'FLÄKTKÅPOR', link: 'https://fjaraskupan.se/'},
+          { id: 1, img: 'fjaraskupan.png', icon: 'mdi-domain', title: '', type: 'FLÄKTKÅPOR', link: 'https://fjaraskupan.se/'},
   
         ],
         wardrobes: [
-          { id: 1, img: 'stirpe.jpg', icon: 'mdi-domain', title: 'Stirpe', type: 'GARDEROBER', link: 'https://stirpe.fi/sv/'},
+          { id: 1, img: 'stirpe.jpg', icon: 'mdi-domain', title: '', type: 'GARDEROBER', link: 'https://stirpe.fi/sv/'},
         ],
       }
     }
@@ -319,6 +321,18 @@
   src: url('../assets/fonts/LibreBaskerville-Italic.ttf');
 }
 .title {
-    font-family: LibreBaskervilleItalic;
+  font-family: LibreBaskervilleItalic;
 }
+  .v-container#suppliers {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+/* .v-container#suppliers {
+  width: 100%;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, min-max(100px,1fr));
+  grid-auto-rows: 50px;
+} */
   </style>
