@@ -58,6 +58,32 @@
       </v-list> -->
     </v-navigation-drawer>
 
+    <v-app-bar class="elevation-0" density="compact">
+      <!-- <v-toolbar-title>Snabbkontakt</v-toolbar-title> -->
+      <v-spacer></v-spacer>
+      <v-chip
+      class="d-none d-sm-flex"
+      color="#D7B46A"
+      text-color="#000"
+      variant="outlined"
+      prepend-icon="mdi-hammer-screwdriver"
+      >
+      30% ROT-avdrag
+      </v-chip>
+      <v-btn
+      prepend-icon="mdi-phone"
+      @click.prevent="handlePhoneNumber"
+    >
+      0171-340 00
+    </v-btn>
+    <v-btn
+      prepend-icon="mdi-email"
+      @click.prevent="handleMail"
+    >
+      info@kok-bygg.se
+    </v-btn>
+    </v-app-bar>
+
     <v-app-bar app color="#D7B46A">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
@@ -130,6 +156,13 @@ const scrollToLink = (link) => {
   document.getElementById(link).scrollIntoView({ behavior: "smooth", block: 'nearest' })
 }
 
+const handlePhoneNumber = () => {
+  window.open('tel:+4617134000', '_self')
+}
+
+const handleMail = () => {
+  window.open('mailto:info@kok-bygg.se', '_self')
+}
 // onMounted(() => {
 // const sectionOne = document.getElementById('suppliers')
 // const sections = document.querySelectorAll('.v-container')

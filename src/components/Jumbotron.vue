@@ -15,14 +15,5 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'home',
 
-  components: {
-    
-  },
 })
 </script>
-<style scoped>
-/* #home {
-  scroll-padding-top: -30px;
-} */
-
-</style>

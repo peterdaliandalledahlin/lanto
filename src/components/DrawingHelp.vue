@@ -20,18 +20,8 @@
     </v-container>
 </template>
 
-<script>
-export default {
-
-}
-</script>
-
 <style scoped>
-/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Work+Sans:wght@700;800&display=swap'); */
-/* @font-face {
-  font-family: LibreBaskervilleRegular;
-  src: url('../assets/fonts/LibreBaskerville-Regular.ttf');
-} */
+
 @font-face {
   font-family: LibreBaskervilleItalic;
   src: url('../assets/fonts/LibreBaskerville-Italic.ttf');

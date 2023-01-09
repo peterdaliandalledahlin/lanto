@@ -79,8 +79,8 @@
 
 @media screen and (max-width: 992px) {}
 @media screen and (max-width: 600px) {}
-*/
-/* .v-window.v-theme--light.v-carousel {
+
+.v-window.v-theme--light.v-carousel {
     height: 800px !important;
 } */
 </style>

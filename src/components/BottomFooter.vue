@@ -43,6 +43,7 @@
         <!--
         <v-img
           :width="width"
+          :aspectRatio="aspectRation"
           src="logotype_peterdahlindesign.png"
           cover
         ></v-img>

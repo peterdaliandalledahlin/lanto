@@ -67,13 +67,7 @@
           >
             Rensa formuläret
           </v-btn>
-      <!-- 
-          <v-btn
-            color="warning"
-            @click="resetValidation"
-          >
-            Reset Validation
-          </v-btn> -->
+
         </v-form>
         <v-snackbar
       v-model="snackbar"
