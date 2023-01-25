@@ -28,6 +28,7 @@
   
       <v-card-actions v-if="!kitchen.link == ''">
         <v-btn
+          aria-label="länk till köksleverantörer"
           color="#000"
           :href="kitchen.link"
           target="_blank"
@@ -67,6 +68,7 @@
   
       <v-card-actions>
         <v-btn
+        aria-label="länk till köksbänksleverantörer"
           color="#000"
           
           :href="countertop.link"
@@ -106,6 +108,7 @@
   
       <v-card-actions>
         <v-btn
+          aria-label="länk till lverantörer av beslag och design"
           color="#000"
           
           :href="design.link"
@@ -145,6 +148,7 @@
   
       <v-card-actions>
         <v-btn
+          aria-label="länk till lverantörer av diskbänkar"
           color="#000"
           
           :href="sink.link"
@@ -184,6 +188,7 @@
   
       <v-card-actions>
         <v-btn
+          aria-label="länk till leverantörer av vitvaror"
           color="#000"
           
           :href="appliance.link"
@@ -223,6 +228,7 @@
   
       <v-card-actions>
         <v-btn
+          aria-label="länk till leverantörer av fläktkåpor"
           color="#000"
           
           :href="fancover.link"
@@ -262,8 +268,8 @@
   
       <v-card-actions>
         <v-btn
-          color="#000"
-          
+          aria-label="länk till leverantörer av garderober"
+          color="#000"      
           :href="wardrobe.link"
           target="_blank"
         >

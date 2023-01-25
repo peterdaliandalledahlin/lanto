@@ -6,6 +6,7 @@
           lazy-validation
         >
           <v-text-field
+            aria-label="namn"
             v-model="name"
             :counter="20"
             :rules="nameRules"
@@ -15,6 +16,7 @@
           ></v-text-field>
       
           <v-text-field
+            aria-label="epost"
             v-model="email"
             :rules="emailRules"
             label="E-post"
@@ -23,12 +25,14 @@
           ></v-text-field>
 
           <v-text-field
+            aria-label="telfonnummer"
             v-model="phone"
             label="Telefonnummer"
             name="phone"
           ></v-text-field>
       
           <v-select
+            aria-label="välj ett ärende"
             v-model="select"
             :items="items"
             :rules="[v => !!v || 'Ni måste välja ett ämne']"
@@ -45,6 +49,7 @@
           ></v-checkbox> -->
       
           <v-btn
+            aria-label="skicka förfrågan från formulär"
             :disabled="!valid"
             color="#D7B46A"
             class="mr-4"
@@ -52,6 +57,7 @@
             @click.prevent="submit"
           >
           <v-progress-circular
+            aria-label="spinner"
             v-if="spinner"
             indeterminate
             color="#D7B46A"
@@ -60,6 +66,7 @@
           </v-btn>
       
           <v-btn
+          aria-label="rensa formuläret"
             variant="outlined"
             color="#D7B46A"
             class="mr-4"
@@ -76,6 +83,7 @@
 
       <template v-slot:actions>
         <v-btn
+          aria-label="stäng popup meddelande"
           color="pink"
           variant="text"
           @click="snackbar = false"

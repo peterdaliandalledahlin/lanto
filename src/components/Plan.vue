@@ -3,7 +3,7 @@
       src="panovision-bg.jpg"
     >
       <div class="d-flex flex-column fill-height justify-center align-center text-white">
-        <v-btn @click="scrollToLink('contact')" color="#D7B46A">Planera ditt köksköp - boka tid</v-btn>
+        <v-btn @click="scrollToLink('contact')" color="#D7B46A" aria-label="scrolla till kontakt">Planera ditt köksköp - boka tid</v-btn>
       </div>
     </v-parallax>
   </template>

@@ -33,29 +33,10 @@
             <v-icon :icon="item.icon"></v-icon>
           </template>
 
-          <!-- <v-list-item-title><a :href="item.link">{{item.text}}</a></v-list-item-title> -->
           <v-list-item-title @click="scrollToLink(item.link), drawer = !drawer">{{item.text}}</v-list-item-title>
         </v-list-item>
       </v-list>
 
-      <!-- <v-list
-        dense
-        nav
-      >
-        <v-list-item
-          v-for="item in items"
-          :key="item.title"
-          link
-        >
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
-
-          <v-list-item-content>
-            <v-list-item-title @click="$vuetify.goTo(item.link, drawer = false,  {duration: 500, easing: 'easeInOutCubic'})">{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list> -->
     </v-navigation-drawer>
 
     <v-app-bar class="elevation-0" density="compact">
@@ -67,10 +48,13 @@
       text-color="#000"
       variant="outlined"
       prepend-icon="mdi-hammer-screwdriver"
+      href="https://skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete.4.2e56d4ba1202f95012080002966.html?q=rotavdrag"
+      target="_blank"
       >
       30% ROT-avdrag
       </v-chip>
       <v-btn
+      aria-label="ring 0171-34000"
       prepend-icon="mdi-phone"
       @click.prevent="handlePhoneNumber"
     >
@@ -79,6 +63,7 @@
     <v-btn
       prepend-icon="mdi-email"
       @click.prevent="handleMail"
+      aria-label="öppna e-post"
     >
       info@kok-bygg.se
     </v-btn>
@@ -91,22 +76,14 @@
 
       <v-spacer></v-spacer>
 
-        <v-btn @click="scrollToLink('concept-smart')" icon>
+        <v-btn @click="scrollToLink('concept-smart')" icon aria-label="scrolla till koncept smart">
           <v-icon>mdi-head-lightbulb</v-icon>
         </v-btn>
 
-        <!-- <v-btn icon>
-          <v-icon>mdi-heart</v-icon>
-        </v-btn>
-
-        <v-btn icon>
-          <v-icon>mdi-dots-vertical</v-icon>
-        </v-btn> -->
     </v-app-bar>
 
     <v-main>
       <!-- <router-view /> -->
-      
       <Jumbotron />
       <Infobox />
       <Plan />
@@ -118,8 +95,7 @@
       <Contact />
       <Map />
       <TopFooter />
-      <BottomFooter />
-      
+      <BottomFooter />     
     </v-main>
   </v-app>
 </template>
@@ -163,34 +139,5 @@ const handlePhoneNumber = () => {
 const handleMail = () => {
   window.open('mailto:info@kok-bygg.se', '_self')
 }
-// onMounted(() => {
-// const sectionOne = document.getElementById('suppliers')
-// const sections = document.querySelectorAll('.v-container')
-// const options = {
-//   root: null,
-//   threshold: 0,
-//   rootMargin: ''
-// }
-
-// const observer = new IntersectionObserver((entries, observer) => {
-//   entries.forEach((entry) => {
-//   if(!entry.isInterSecting) {
-//    return
-//   }
-//     console.log(entry.target)
-//    entry.target.classList.toggle('inverse')
-//    observer.unobserve(entry.target)
-//   })
-// }, options)
-
-// sections.forEach((section) => {
-//   observer.observe(section)
-// })
-
-// })
 
 </script>
-
-<style scoped>
-
-</style>

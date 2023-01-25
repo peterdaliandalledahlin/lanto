@@ -4,7 +4,7 @@
     id="home"
   >
     <div class="d-flex flex-column fill-height justify-center align-center text-white">
-      <v-img class="my-3" width="150" height="150" src="logo.png" />
+      <v-img class="my-3" width="150" height="150" src="logo.png" alt="logotyp lanto kök och bygg" />
     </div>
   </v-parallax>
 </template>

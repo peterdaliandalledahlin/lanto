@@ -9,18 +9,21 @@
       >
           <v-card-text>
             <v-btn
+            aria-label="scrolla hem"
             @click="scrollToLink('home')"
             class="mx-4"
             icon="mdi-home"
             variant="plain"
             ></v-btn>
             <v-btn
+            aria-label="epost till info@kok-bygg.se"
             href="mailto:info@kok-bygg.se"
             class="mx-4"
             icon="mdi-email"
             variant="plain"
             ></v-btn>
             <v-btn
+            aria-label="kök och bygg på instagram"
             href="https://www.instagram.com/lantokok_bygg/"
             target="_blank"
             class="mx-4"
@@ -28,6 +31,7 @@
             variant="plain"
             ></v-btn>
             <v-btn
+            aria-label="kök och bygg på facebook"
             href="https://www.facebook.com/lantokokbygg"
             target="_blank"
             class="mx-4"
