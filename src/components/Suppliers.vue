@@ -329,11 +329,11 @@
 .title {
   font-family: LibreBaskervilleItalic;
 }
-  .v-container#suppliers {
+  /* .v-container#suppliers {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-  }
+  } */
 /* .v-container#suppliers {
   width: 100%;
   display: grid;

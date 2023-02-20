@@ -67,7 +67,7 @@
     >
       info@kok-bygg.se
     </v-btn>
-    </v-app-bar>
+  </v-app-bar>
 
     <v-app-bar app color="#D7B46A">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
@@ -129,7 +129,7 @@ const items = ref([
 ])
   
 const scrollToLink = (link) => {
-  document.getElementById(link).scrollIntoView({ behavior: "smooth", block: 'nearest' })
+  document.getElementById(link).scrollIntoView({ behavior: "smooth", block: 'end', inline: 'nearest' })
 }
 
 const handlePhoneNumber = () => {
