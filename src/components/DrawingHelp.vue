@@ -24,10 +24,12 @@
 
 @font-face {
   font-family: LibreBaskervilleItalic;
+  font-display: swap;
   src: url('../assets/fonts/LibreBaskerville-Italic.ttf');
 }
 @font-face {
   font-family: MontserratRegular;
+  font-display: swap;
   src: url('../assets/fonts/Montserrat-Regular.ttf');
 }
 .title {

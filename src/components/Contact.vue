@@ -1,100 +1,101 @@
 <template>
-    <v-container id="contact">
-        <v-form
-          ref="form"
-          v-model="valid"
-          lazy-validation
-        >
-          <v-text-field
-            aria-label="namn"
-            v-model="name"
-            :counter="20"
-            :rules="nameRules"
-            label="Namn"
-            name="namn"
-            required
-          ></v-text-field>
-      
-          <v-text-field
-            aria-label="epost"
-            v-model="email"
-            :rules="emailRules"
-            label="E-post"
-            name="email"
-            required
-          ></v-text-field>
+  <v-container id="contact">
+    <v-form
+      ref="form"
+      v-model="valid"
+      lazy-validation
+    >
+      <v-text-field
+        aria-label="namn"
+        v-model="name"
+        :counter="20"
+        :rules="nameRules"
+        label="Namn"
+        name="namn"
+        required
+      ></v-text-field>
+  
+      <v-text-field
+        aria-label="epost"
+        v-model="email"
+        :rules="emailRules"
+        label="E-post"
+        name="email"
+        required
+      ></v-text-field>
 
-          <v-text-field
-            aria-label="telfonnummer"
-            v-model="phone"
-            label="Telefonnummer"
-            name="phone"
-          ></v-text-field>
-      
-          <v-select
-            aria-label="välj ett ärende"
-            v-model="select"
-            :items="items"
-            :rules="[v => !!v || 'Ni måste välja ett ämne']"
-            label="Välj ett ärende"
-            name="select"
-            required
-          ></v-select>
-      
-          <!-- <v-checkbox
-            v-model="checkbox"
-            :rules="[v => !!v || 'Du måste godkänna villkoren för att kunna fortsätta!']"
-            label="Godkänn villkoren?"
-            required
-          ></v-checkbox> -->
-      
-          <v-btn
-            aria-label="skicka förfrågan från formulär"
-            :disabled="!valid"
-            color="#D7B46A"
-            class="mr-4"
-            type="submit"
-            @click.prevent="submit"
-          >
-          <v-progress-circular
-            aria-label="spinner"
-            v-if="spinner"
-            indeterminate
-            color="#D7B46A"
-          ></v-progress-circular>
-            Skicka
-          </v-btn>
-      
-          <v-btn
-          aria-label="rensa formuläret"
-            variant="outlined"
-            color="#D7B46A"
-            class="mr-4"
-            @click="reset"
-          >
-            Rensa formuläret
-          </v-btn>
+      <v-text-field
+        aria-label="telefonnummer"
+        v-model="phone"
+        label="Telefonnummer"
+        name="phone"
+      ></v-text-field>
+  
+      <v-select
+        aria-label="välj ett ärende"
+        v-model="select"
+        :items="items"
+        :rules="[v => !!v || 'Ni måste välja ett ämne']"
+        label="Välj ett ärende"
+        name="select"
+        required
+        role="listbox"
+      ></v-select>
+  
+      <!-- <v-checkbox
+        v-model="checkbox"
+        :rules="[v => !!v || 'Du måste godkänna villkoren för att kunna fortsätta!']"
+        label="Godkänn villkoren?"
+        required
+      ></v-checkbox> -->
+  
+      <v-btn
+        aria-label="skicka förfrågan från formulär"
+        :disabled="!valid"
+        color="#D7B46A"
+        class="mr-4"
+        type="submit"
+        @click.prevent="submit"
+      >
+      <v-progress-circular
+        aria-label="spinner"
+        v-if="spinner"
+        indeterminate
+        color="#D7B46A"
+      ></v-progress-circular>
+        Skicka
+      </v-btn>
+  
+      <v-btn
+      aria-label="rensa formuläret"
+        variant="outlined"
+        color="#D7B46A"
+        class="mr-4"
+        @click="reset"
+      >
+        Rensa formuläret
+      </v-btn>
 
-        </v-form>
-        <v-snackbar
+    </v-form>
+    <v-snackbar
       v-model="snackbar"
+      :timeout="timeout"
     >
       {{ text }}
 
       <template v-slot:actions>
         <v-btn
-          aria-label="stäng popup meddelande"
-          color="pink"
-          variant="text"
-          @click="snackbar = false"
+        aria-label="stäng popup meddelande"
+        color="#D7B46A"
+        variant="text"
+        @click="snackbar = false"
         >
           Stäng
         </v-btn>
       </template>
     </v-snackbar>
-    </v-container>
+  </v-container>
 </template>
-
 
 <script>
 import axios from 'axios'
@@ -120,9 +121,10 @@ export default {
       'Rådgivning',
       'Jag vill bli kontaktad',
     ],
-    checkbox: false,
+    //checkbox: false,
     snackbar: false,
     text: `Meddelandet är skickat!`,
+    timeout: 3000,
   }),
 
   methods: {

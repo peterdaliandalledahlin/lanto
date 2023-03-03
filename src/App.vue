@@ -72,7 +72,8 @@
     <v-app-bar app color="#D7B46A">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Lanto Kök & Bygg</v-toolbar-title>
+      <!-- <v-toolbar-title>Lanto Kök & Bygg</v-toolbar-title> -->
+      <v-toolbar-title><span>Kök</span><span>Bygg</span> </v-toolbar-title>
 
       <v-spacer></v-spacer>
 
@@ -85,6 +86,7 @@
     <v-main>
       <!-- <router-view /> -->
       <Jumbotron />
+      <Campaign />
       <Infobox />
       <Plan />
       <DrawingHelp />
@@ -95,13 +97,14 @@
       <Contact />
       <Map />
       <TopFooter />
-      <BottomFooter />     
+      <BottomFooter />  
     </v-main>
   </v-app>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import Campaign from './components/Campaign.vue'
 import Jumbotron from './components/Jumbotron.vue'
 import Infobox from './components/Infobox.vue'
 import Plan from './components/Plan.vue'
@@ -141,3 +144,46 @@ const handleMail = () => {
 }
 
 </script>
+
+<style scoped>
+.v-toolbar-title {
+  margin-top: 8px;
+}
+/* .wrapper > span:nth-child(1) {
+    justify-content: right;
+    transform: rotate(-90deg);
+    justify-content: flex-end;
+} */
+.v-toolbar-title__placeholder > span:nth-child(1) {
+    font-family: Agan, sans-serif;
+    font-size: 1.5rem;
+}
+.v-toolbar-title__placeholder > span:nth-child(1)::before {
+    content: 'Lanto';
+    display: inline-block;
+    font-size: .4rem;
+    transform: rotate(-90deg);
+    position: relative;
+    top: -6px;
+    right: -6px;
+    /* color: #FEF200; */
+    color: #231F20;
+}
+.v-toolbar-title__placeholder > span:nth-child(2) {
+    font-family: Agan, sans-serif;
+    font-size: 1.5rem; 
+}
+.v-toolbar-title__placeholder > span:nth-child(2)::before {
+    content: '&';
+    color: #fff;
+    font-size: 1.5rem;
+    /* background-color: #FEF200; */
+    background-color: #231F20;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    font-weight: bolder;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+</style>

@@ -324,6 +324,7 @@
   <style scoped>
 @font-face {
   font-family: LibreBaskervilleItalic;
+  font-display: swap;
   src: url('../assets/fonts/LibreBaskerville-Italic.ttf');
 }
 .title {
