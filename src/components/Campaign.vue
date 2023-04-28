@@ -1,16 +1,17 @@
 <template>
     <v-container fluid id="campaign">
-        <h1>SKAPA DITT DRÖMKÖK TILLSAMMANS MED OSS!</h1>
+        <h1>KÖKSKAMPANJ</h1>
+        <h2>FÅ <span>2.000:-</span><span> AV VARJE 10.000:- SOM KÖKET KOSTAR</span></h2>
+        <h3>för att köpa vitvaror eller bänkskivor från vårt sortiment under kampanjperioden!</h3>
         <div class="wrapper">
             <span>Kök</span><span>Bygg</span> 
         </div>
-        <h2>Vi är med dig hela vägen från design till montering</h2>
-        <h3><span>Kökskampanj</span> under mars månad, då vi har öppet;</h3>
-        <p>Lördag 10:00-13:00 och Måndag 12:00-18:00, övrig tid efter tidsbokning</p>
-        <p>Torggatan 28C &bull; info@kok-bygg.se &bull; 0171-340 00</p>
-        <p>Köp kök under kampanj-perioden och <span>få 2.000:- per 10.000:-</span> som köket kostar att nyttja vid köp av vitvaror från vårt sortiment från <span>Miele</span> och <span>Witt</span></p>
+        <p>Öppet efter tidsbokning ring 0171-340 00</p>
+        <p class="mb-3">Torggatan 28C &bull; info@kok-bygg.se &bull; 0171-340 00</p>
+        <p class="welcome">Välkommen till köksutställningen</p>
+        <!-- <p>Köp kök under kampanj-perioden och <span>få 2.000:- per 10.000:-</span> som köket kostar att nyttja vid köp av vitvaror från vårt sortiment från <span>Miele</span> och <span>Witt</span></p> -->
         <!-- <p>Köp kök under kampanj-perioden och <span>få 2.000:- per 10.000:-</span> att nyttja vid köp av vitvaror från vårt sortiment från <span>Miele</span> och <span>Witt</span></p> -->
-        <p>Gratis köksplanering under kampanj-perioden (ordinarie pris = 5.000:-)</p>
+        <!-- <p>Gratis köksplanering under kampanj-perioden (ordinarie pris = 5.000:-)</p> -->
     </v-container>
 </template>
 
@@ -24,47 +25,47 @@
   font-display: swap;
   src: url('../assets/fonts/Agan.woff');
 }
+@font-face {
+  font-family: LibreBaskerville-Italic;
+  font-display: swap;
+  src: url('../assets/fonts/LibreBaskerville-Italic.ttf');
+}
 .v-container {
     text-align: center;
     background-color: #231F20;
 }
-.v-container > p:nth-child()
 h1 {
-    font-size: clamp(1rem, -0.875rem + 8.333vw, 2rem);
+    background-color: #EBC501;
+    color: #fff;
+    font-size: clamp(1.5rem, -0.875rem + 8.333vw, 2.2rem);
+    display: inline-block;
+    padding: 0 10px;
 }
 h2 {
-    font-size: clamp(.8rem, -0.875rem + 8.333vw, 1.5rem);
-}
-h1, h3 > span {
-    color: #FEF200;
-}
-h2, h3, p {
+    font-size: clamp(.8rem, -0.875rem + 8.333vw, 2rem);
     color: #fff;
-    /* #FEF200 */
 }
-h3 > span {
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-style: italic;
-    font-size: x-large;
-    font-weight: 100;
+h2 > span:nth-child(1) {
+    color: #EBC501;
 }
-p > span:nth-child(1) {
-    color: #FEF200;
+h2 > span:nth-child(2) {
+    font-size: clamp(.6rem, -0.875rem + 8.333vw, 1.6rem);
 }
-p > span:nth-child(2) {
+h3 {
+    font-size: clamp(.2rem, -0.875rem + 8.333vw, 1rem);
     color: #fff;
-    background: red;
-    padding: 3px 3px;
 }
-p > span:nth-child(3) {
-    color: #000;
-    background: #fff;
-    padding: 3px 3px;
+p {
+    color: #fff;
 }
-/* Köp kök under kampanj-perioden och få 2.000:- per 10.000:- som köket kostar
-               att nyttjas vid köp av vitvaror från vårt sortiment från MIELE och Witt.
-
-Gratis köksplanering under kampanj-perioden (ordinarie pris = 5.000:-) */
+.welcome {
+    font-family: 'LibreBaskerville-Italic', sans-serif;
+    font-size: clamp(.6rem, -0.875rem + 8.333vw, 1.6rem);
+    background-color: #EBC501;
+    color: black;
+    display: inline-block;
+    padding: 0 30px;
+}
 .wrapper {
     display: flex;
     justify-content: center;
@@ -72,11 +73,6 @@ Gratis köksplanering under kampanj-perioden (ordinarie pris = 5.000:-) */
 .wrapper > span {
     color: #fff;
 }
-/* .wrapper > span:nth-child(1) {
-    justify-content: right;
-    transform: rotate(-90deg);
-    justify-content: flex-end;
-} */
 .wrapper > span:nth-child(1) {
     font-family: Agan, sans-serif;
     font-size: 3rem;

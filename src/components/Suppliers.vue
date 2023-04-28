@@ -1,20 +1,20 @@
 <template>
     <v-container id="suppliers">
-      <h1 class="title mb-2">Kök</h1>
+      <h1 class="title mb-2">Kök</h1> 
       <v-row class="mt-3">
-        <v-col v-for="kitchen in kitchens" :key="kitchen.id" cols="12" sm="6" lg="3">
+        <v-col v-for="(kitchen,i) in kitchens" :key="i" cols="12" sm="6" lg="3">
           <v-card
             class="mx-auto fill-height"
             max-width="400"
             elevation="5"
           >
-      <v-img
-        v-if="!kitchen.img == ''"      
-        height="200px"
-        :src="kitchen.img"
-      >
-        <!-- <v-card-title>Det här blir en bra dag</v-card-title> -->
-      </v-img>
+          <v-img
+            v-if="!kitchen.img == ''"      
+            height="200px"
+            :src="kitchen.img"
+          >
+            <!-- <v-card-title>Det här blir en bra dag</v-card-title> -->
+          </v-img>
   
       <!-- <v-card-subtitle class="pb-0">
         Ev. information
@@ -36,7 +36,7 @@
         >
           Till hemsidan
         </v-btn>
-  
+
       </v-card-actions>
     </v-card>
         </v-col>
@@ -330,7 +330,19 @@
 .title {
   font-family: LibreBaskervilleItalic;
 }
-  /* .v-container#suppliers {
+/*
+.v-enter-from {
+  opacity: 0;
+  transform: translateX(-300px);
+}
+.v-leave-to {
+  opacity: 0;
+  transform: translateY(300px);
+}
+.v-move, .v-enter-active, .v-leave-active {
+  transition: all 0.5s ease;
+}
+   .v-container#suppliers {
     display: flex;
     flex-direction: column;
     align-items: stretch;
